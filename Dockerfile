@@ -3,7 +3,7 @@ MAINTAINER Fernando Mayo <fernando@tutum.co>
 
 # Install packages
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server-5.5 pwgen
 
 # Add image configuration and scripts
 ADD start.sh /start.sh
