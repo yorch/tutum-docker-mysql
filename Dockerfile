@@ -9,13 +9,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server pwgen
 RUN rm -rf /var/lib/mysql/*
 
 # Add MySQL configuration
-ADD my.cnf /etc/mysql/conf.d/my.cnf
-ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
+ADD etc/my.cnf             /etc/mysql/conf.d/my.cnf
+ADD etc/mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 
 # Add MySQL scripts
-ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
-ADD import_sql.sh /import_sql.sh
-ADD run.sh /run.sh
+ADD scripts/create_mysql_admin_user.sh /create_mysql_admin_user.sh
+ADD scripts/import_sql.sh              /import_sql.sh
+ADD scripts/run.sh                     /run.sh
 RUN chmod 755 /*.sh
 
 # Exposed ENV
