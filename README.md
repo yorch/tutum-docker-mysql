@@ -48,6 +48,11 @@ You can now test your deployment:
 
 	mysql -uadmin -p
 
+Note: you may need to force a TCP connection to MySQL, to do this, just append the following lines to your `~/.my.cnf` file (or create the file if does not exist already):
+
+	[client]
+	protocol=tcp
+
 Done!
 
 
